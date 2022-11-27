@@ -49,7 +49,7 @@ const paramsAuto = {
   Q: 2,
 };
 
-module.exports = function (m) {
+export default function (m) {
   const _fit_sarimax = m.cwrap("fit_sarimax", "number", [
     "array",
     "array",
@@ -150,39 +150,39 @@ module.exports = function (m) {
       exog.length > 0 ? (Array.isArray(exog[0]) ? exog.length : 1) : 0;
     this.model = o.auto
       ? _fit_autoarima(
-          this.ts,
-          this.exog,
-          o.p,
-          o.d,
-          o.q,
-          o.P,
-          o.D,
-          o.Q,
-          o.s,
-          this.nexog,
-          this.lin,
-          o.method,
-          o.optimizer,
-          o.approximation,
-          o.search,
-          o.verbose
-        )
+        this.ts,
+        this.exog,
+        o.p,
+        o.d,
+        o.q,
+        o.P,
+        o.D,
+        o.Q,
+        o.s,
+        this.nexog,
+        this.lin,
+        o.method,
+        o.optimizer,
+        o.approximation,
+        o.search,
+        o.verbose
+      )
       : _fit_sarimax(
-          this.ts,
-          this.exog,
-          o.p,
-          o.d,
-          o.q,
-          o.P,
-          o.D,
-          o.Q,
-          o.s,
-          this.nexog,
-          this.lin,
-          o.method,
-          o.optimizer,
-          o.verbose
-        );
+        this.ts,
+        this.exog,
+        o.p,
+        o.d,
+        o.q,
+        o.P,
+        o.D,
+        o.Q,
+        o.s,
+        this.nexog,
+        this.lin,
+        o.method,
+        o.optimizer,
+        o.verbose
+      );
     return this;
   };
 
@@ -197,19 +197,19 @@ module.exports = function (m) {
     }
     const addr = o.auto
       ? _predict_autoarima(
-          this.model,
-          this.ts,
-          this.exog, // old
-          uintify(prepare(exog)), // new
-          l
-        )
+        this.model,
+        this.ts,
+        this.exog, // old
+        uintify(prepare(exog)), // new
+        l
+      )
       : _predict_sarimax(
-          this.model,
-          this.ts,
-          this.exog, // old
-          uintify(prepare(exog)), // new
-          l
-        );
+        this.model,
+        this.ts,
+        this.exog, // old
+        uintify(prepare(exog)), // new
+        l
+      );
     return getResults(addr, l);
   };
 

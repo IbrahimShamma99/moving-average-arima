@@ -2,8 +2,10 @@
   "name": "moving-average-arima",
   "version": "0.2.6",
   "description": "ARIMA, SARIMA, SARIMAX and AutoARIMA models for time series analysis and forecasting",
-  "main": "index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
+    "prepublish": "tsc --project ./",
     "clean": "rm -rf wasm && rm -rf wrapper",
     "mkdirs": "mkdir wasm && mkdir wrapper",
     "prepare-wasm": "jsmaker wasm/native.wasm -t uint8 > wrapper/native.bin.js",

@@ -1,4 +1,4 @@
-const ARIMA = require('../../')
+const ARIMA = require('../../src')
 const ts = [41, 71, 0, 40, 40, 40, 0, 40, 20, 1, 10, 1, 90, 0, 0, 0, 0, 0]
 
 for (let i = 0; i < 100; i++) {
