@@ -4,7 +4,7 @@
   "description": "ARIMA, SARIMA, SARIMAX and AutoARIMA models for time series analysis and forecasting",
   "main": "index.js",
   "scripts": {
-    "clean": "rimraf wasm && rimraf wrapper",
+    "clean": "rm -rf wasm && rm -rf wrapper",
     "mkdirs": "mkdir wasm && mkdir wrapper",
     "prepare-wasm": "jsmaker wasm/native.wasm -t uint8 > wrapper/native.bin.js",
     "test": "tape test.js",
@@ -28,7 +28,6 @@
   ],
   "devDependencies": {
     "jsmaker": "0.0.2",
-    "rimraf": "^3.0.2",
     "tape": "^5.3.2"
   },
   "author": "Anton Zemlyansky",
