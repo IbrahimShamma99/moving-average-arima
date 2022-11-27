@@ -1,0 +1,37 @@
+{
+  "name": "arima-ts",
+  "version": "0.2.6",
+  "description": "ARIMA, SARIMA, SARIMAX and AutoARIMA models for time series analysis and forecasting",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf wasm && rimraf wrapper",
+    "mkdirs": "mkdir wasm && mkdir wrapper",
+    "prepare-wasm": "jsmaker wasm/native.wasm -t uint8 > wrapper/native.bin.js",
+    "test": "tape test.js",
+    "build": "npm run clean && npm run mkdirs && make build && npm run prepare-wasm"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zemlyansky/arima"
+  },
+  "keywords": [
+    "arima",
+    "sarima",
+    "sarimax",
+    "autoarima",
+    "timeseries",
+    "prediction",
+    "forecasting",
+    "statistics",
+    "webassembly",
+    "wasm"
+  ],
+  "devDependencies": {
+    "jsmaker": "0.0.2",
+    "rimraf": "^3.0.2",
+    "tape": "^5.3.2"
+  },
+  "author": "Anton Zemlyansky",
+  "license": "MIT",
+  "dependencies": {}
+}
