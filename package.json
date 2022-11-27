@@ -1,6 +1,6 @@
 {
   "name": "moving-average-arima",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "ARIMA, SARIMA, SARIMAX and AutoARIMA models for time series analysis and forecasting",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
@@ -10,7 +10,7 @@
     "mkdirs": "mkdir wasm && mkdir wrapper",
     "prepare-wasm": "jsmaker wasm/native.wasm -t uint8 > wrapper/native.bin.js",
     "test": "tape test.js",
-    "build": "npm run clean && npm run mkdirs && make build && npm run prepare-wasm"
+    "build": "npm run clean && npm run mkdirs && make build && npm run prepare-wasm && npm run prepublish"
   },
   "repository": {
     "type": "git",
