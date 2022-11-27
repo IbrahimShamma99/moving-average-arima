@@ -1,4 +1,4 @@
-# Moving Average Pt2 
+# Moving Average Pt2 Unfinished Project
 
 ### Please check PT1 https://github.com/IbrahimShamma99/moving-average-algorithms
 ## ARIMA. Time-series forecasting in browsers and Node.js
@@ -24,7 +24,7 @@ const arima = new ARIMA(options)
 
 Where the `options` object can include:
 - `auto` - automatic moving-average-arima (default: `false`)
-- `p`, `d`, `q` params for moving-average-arima (default: `p: 1, d: 0, q: 1`)
+- `p`, `d`, `q` params for ARIMA (default: `p: 1, d: 0, q: 1`)
 - `P`, `D`, `Q`, `s` seasonal params (default: `0`s). Setting them to non-zero values makes the ARIMA model seasonal
 - `method` - ARIMA method (default: 0, described below)
 - `optimizer` - optimization method (default: 6, described below)
