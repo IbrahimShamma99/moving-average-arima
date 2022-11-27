@@ -1,6 +1,6 @@
 {
   "name": "moving-average-arima",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "ARIMA, SARIMA, SARIMAX and AutoARIMA models for time series analysis and forecasting",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
