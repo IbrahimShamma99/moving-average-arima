@@ -5,5 +5,4 @@ import bin from '../wrapper/native.bin.js';
 import loadARIMA from './load.js';
 
 const moduleObject = Module({ wasmBinary: bin })
-
-export default loadARIMA(moduleObject);
+export const arimaModule = loadARIMA(moduleObject);

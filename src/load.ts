@@ -1,16 +1,16 @@
-function uintify(arr) {
+function uintify(arr: Array<any>) {
   return new Uint8Array(Float64Array.from(arr).buffer);
 }
 
-function flat(arr) {
+function flat(arr: Array<any>) {
   return [].concat.apply([], arr);
 }
 
-function transpose(arr) {
-  return arr[0].map((x, i) => arr.map((x) => x[i]));
+function transpose(arr: Array<any>) {
+  return arr[0].map((_: any, i: number) => arr.map((x) => x[i]));
 }
 
-function prepare(arr) {
+function prepare(arr: Array<any>) {
   const farr = flat(arr);
   for (let i = 0; i < farr.length - 2; i++) {
     if (isNaN(farr[i + 1])) {
@@ -49,7 +49,7 @@ const paramsAuto = {
   Q: 2,
 };
 
-export default function (m) {
+export default function (m: any) {
   const _fit_sarimax = m.cwrap("fit_sarimax", "number", [
     "array",
     "array",
