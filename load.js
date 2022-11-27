@@ -49,7 +49,7 @@ const paramsAuto = {
   Q: 2,
 };
 
-export default function (m) {
+module.exports = function (m) {
   const _fit_sarimax = m.cwrap("fit_sarimax", "number", [
     "array",
     "array",
