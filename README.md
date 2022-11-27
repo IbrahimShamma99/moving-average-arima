@@ -18,13 +18,13 @@ npm install arima
 
 ### Initialization
 ```javascript
-const ARIMA = require('arima')
+const ARIMA = require('moving-average-arima')
 const arima = new ARIMA(options)
 ```
 
 Where the `options` object can include:
-- `auto` - automatic ARIMA (default: `false`)
-- `p`, `d`, `q` params for ARIMA (default: `p: 1, d: 0, q: 1`)
+- `auto` - automatic moving-average-arima (default: `false`)
+- `p`, `d`, `q` params for moving-average-arima (default: `p: 1, d: 0, q: 1`)
 - `P`, `D`, `Q`, `s` seasonal params (default: `0`s). Setting them to non-zero values makes the ARIMA model seasonal
 - `method` - ARIMA method (default: 0, described below)
 - `optimizer` - optimization method (default: 6, described below)
@@ -50,10 +50,10 @@ arima.predict(10, exognew) // Predict 10 steps forwars using new exogenous varia
 ```
 
 ### Running in browsers
-As described in the issue [#10](https://github.com/zemlyansky/arima/issues/10) Chrome prevents compilation of wasm modules >4kB.
+As Chrome prevents compilation of wasm modules >4kB.
 There are two ways to overcome this:
   - Load `arima` in a [Web Worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)
-  - Use the `arima/async` module 
+  - Use the `arima/async` module
 
 Example of async loading:
 ```javascript
