@@ -12,9 +12,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zemlyansky/arima"
+    "url": "git+https://github.com/ibrahimshamma99/arima-ts"
   },
   "keywords": [
+    "ts",
     "arima",
     "sarima",
     "sarimax",
