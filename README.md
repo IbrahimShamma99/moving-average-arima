@@ -1,4 +1,5 @@
-# ARIMA. Time-series forecasting in browsers and Node.js
+# Moving Average Pt2 
+## ARIMA. Time-series forecasting in browsers and Node.js
 
 ### Emscripten port of the native C package [ctsa](https://github.com/rafat/ctsa) for time series analysis and forecasting
 

@@ -2,7 +2,7 @@
   "name": "arima-ts",
   "version": "0.2.6",
   "description": "ARIMA, SARIMA, SARIMAX and AutoARIMA models for time series analysis and forecasting",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "clean": "rm -rf wasm && rm -rf wrapper",
     "mkdirs": "mkdir wasm && mkdir wrapper",
