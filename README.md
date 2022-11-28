@@ -57,7 +57,8 @@ There are two ways to overcome this:
 
 Example of async loading:
 ```javascript
-const ARIMAPromise = require('arima/async')
+
+const ARIMAPromise = require('moving-average-arima/async')
 
 ARIMAPromise.then(ARIMA => {
   const ts = Array(10).fill(0).map((_, i) => i + Math.random() / 5)
@@ -71,7 +72,7 @@ All following examples use **synchronous** compilation (Node.js, Firefox). They 
 ### Example: ARIMA
 ```javascript
 // Load package
-const ARIMA = require('arima')
+const { arimaModule: ARIMA } = require("moving-average-arima");
 
 // Synthesize timeseries
 const ts = Array(24).fill(0).map((_, i) => i + Math.random() / 5)
@@ -109,10 +110,10 @@ const [pred, errors] = sarima.predict(12)
 ### Example: SARIMAX
 ```javascript
 // Generate timeseries using exogenous variables
-const f = (a, b) => a * 2 + b * 5
-const exog = Array(30).fill(0).map(x => [Math.random(), Math.random()])
-const exognew = Array(10).fill(0).map(x => [Math.random(), Math.random()])
-const ts = exog.map(x => f(x[0], x[1]) + Math.random() / 5)
+const f = (a, b) => a * 2 + b * 5;
+const exog = Array(30).fill(0).map(x => [Math.random(), Math.random()]);
+const exognew = Array(10).fill(0).map(x => [Math.random(), Math.random()]);
+const ts = exog.map(x => f(x[0], x[1]) + Math.random() / 5);
 
 // Init and fit sarimax
 const sarimax = new ARIMA({
@@ -121,10 +122,10 @@ const sarimax = new ARIMA({
   q: 1,
   transpose: true,
   verbose: false
-}).fit(ts, exog)
+}).fit(ts, exog);
 
 // Predict next 12 values using exognew
-const [pred, errors] = sarimax.predict(12, exognew)
+const [pred, errors] = sarimax.predict(12, exognew);
 ```
 
 ### Example: AutoARIMA
@@ -161,7 +162,8 @@ The old interface of the `arima` package was only one function that took 3 argum
 It returned two vectors - predictions and mean square errors.
 
 ```javascript
-const arima = require('arima')
+const { arimaModule: arima } = require("moving-average-arima");
+
 const [pred, errors] = arima(ts, 20, {
   method: 0, // ARIMA method (Default: 0)
   optimizer: 6, // Optimization method (Default: 6)
