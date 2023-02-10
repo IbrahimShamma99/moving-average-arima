@@ -13,7 +13,7 @@ This CommonJS module includes:
 
 ### Installation of the ARIMA module
 ```bash
-npm install arima
+npm install arima-ts
 ```
 
 ### Initialization
